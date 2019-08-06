@@ -24,12 +24,14 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:26.0-jre'
     
-    implementation 'org.mockito:mockito-core:2.11.0'
+    implementation 'org.mockito:mockito-core:2.27.0'
 
     // Use JUnit test framework
-    def junitVersion = '5.0.1'
+    def junitVersion = '5.4.2'
  	testCompile 'org.junit.jupiter:junit-jupiter-api:' + junitVersion
  	testCompile 'org.junit.jupiter:junit-jupiter-engine:' + junitVersion
  	testCompile 'org.assertj:assertj-core:3.9.0'
- 	testCompile 'org.mockito:mockito-junit-jupiter:2.23.0'
+ 	testCompile 'org.mockito:mockito-junit-jupiter:2.23.4'
+ 	
+ 	
 }

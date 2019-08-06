@@ -6,13 +6,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith( MockitoExtension.class )
-public class CollectorsExerciseTest
+class CollectorsExerciseTest
 {
 
     @Mock
@@ -23,14 +24,15 @@ public class CollectorsExerciseTest
     private CollectorsExerciseInterface implementedCollector;
 
     @BeforeEach
-    public void setUp()
+    void setUp()
     {
         allSignals = Arrays.asList( signal1, signal2, signal3, signal4, signal5 );
         implementedCollector = CollectorsExerciseSolved.getInstance();
     }
 
+    @DisplayName( "Collector tem que ter coletado 1 e somente 1" )
     @Test
-    public void testaCollectorSize()
+    void testaCollectorSize()
     {
         // final List<Signal> singletonList2 = allSignals.stream().collect(
         // implementedCollectorInterface );
@@ -40,7 +42,7 @@ public class CollectorsExerciseTest
     }
 
     @Test
-    public void testaCollectorMaxSize()
+    void testaCollectorMaxSize()
     {
         final List<Signal> singletonList = allSignals.stream().collect( implementedCollector );
         assertThat( implementedCollector.getOriginalSize() ).isEqualTo( 5 );
